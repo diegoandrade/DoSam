@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		B54D19831B25C99000F731BE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B54D19821B25C99000F731BE /* main.cpp */; };
+		B54D198B1B25DCBE00F731BE /* dataExtraction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B54D19891B25DCBE00F731BE /* dataExtraction.cpp */; };
+		B54D198E1B25DDFE00F731BE /* dataPoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B54D198C1B25DDFE00F731BE /* dataPoint.cpp */; };
+		B54D19921B2618B600F731BE /* downSamplingTimeSeries.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B54D19901B2618B600F731BE /* downSamplingTimeSeries.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +28,13 @@
 /* Begin PBXFileReference section */
 		B54D197F1B25C99000F731BE /* DoSam */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DoSam; sourceTree = BUILT_PRODUCTS_DIR; };
 		B54D19821B25C99000F731BE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		B54D19891B25DCBE00F731BE /* dataExtraction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dataExtraction.cpp; sourceTree = "<group>"; };
+		B54D198A1B25DCBE00F731BE /* dataExtraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dataExtraction.h; sourceTree = "<group>"; };
+		B54D198C1B25DDFE00F731BE /* dataPoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dataPoint.cpp; sourceTree = "<group>"; };
+		B54D198D1B25DDFE00F731BE /* dataPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dataPoint.h; sourceTree = "<group>"; };
+		B54D198F1B2600B700F731BE /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		B54D19901B2618B600F731BE /* downSamplingTimeSeries.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = downSamplingTimeSeries.cpp; sourceTree = "<group>"; };
+		B54D19911B2618B600F731BE /* downSamplingTimeSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = downSamplingTimeSeries.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +68,13 @@
 			isa = PBXGroup;
 			children = (
 				B54D19821B25C99000F731BE /* main.cpp */,
+				B54D198F1B2600B700F731BE /* Common.h */,
+				B54D198C1B25DDFE00F731BE /* dataPoint.cpp */,
+				B54D198D1B25DDFE00F731BE /* dataPoint.h */,
+				B54D19891B25DCBE00F731BE /* dataExtraction.cpp */,
+				B54D198A1B25DCBE00F731BE /* dataExtraction.h */,
+				B54D19901B2618B600F731BE /* downSamplingTimeSeries.cpp */,
+				B54D19911B2618B600F731BE /* downSamplingTimeSeries.h */,
 			);
 			path = DoSam;
 			sourceTree = "<group>";
@@ -118,7 +135,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B54D19921B2618B600F731BE /* downSamplingTimeSeries.cpp in Sources */,
+				B54D198B1B25DCBE00F731BE /* dataExtraction.cpp in Sources */,
 				B54D19831B25C99000F731BE /* main.cpp in Sources */,
+				B54D198E1B25DDFE00F731BE /* dataPoint.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
