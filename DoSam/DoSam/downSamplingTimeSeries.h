@@ -15,15 +15,16 @@
 class downSamplingTimeSeries
 {
 public:
-    ~downSamplingTimeSeries();      //Destructor
+    //~downSamplingTimeSeries();      //Destructor
     downSamplingTimeSeries();		//Constructor
     void downSampling( int totalNumberOfElements, int numberToDownSample, dataPoint * baseData);
     
     int tnoe ; // total number Of Elements;
     int nopb ; // number Of Elements Per Bin;
     int ntds ; // number to DownSampling Values the values to downsize the population of points
-    
-    double findAreaGivenThreePoints (double & area , dataPoint A, dataPoint B, dataPoint C);
+
+    void findAreaGivenThreePoints (double & area , dataPoint & A, dataPoint & B, dataPoint & C);
+    void findArea ( double & area, double Ax, double Ay, double Bx, double By, double Cx, double Cy);
     int numberOfElementsPerBin(int totalNumberOfElements, int numberToDownSample, int & numberOfElementsPerBinT);
     
     dataPoint * operablePoints;

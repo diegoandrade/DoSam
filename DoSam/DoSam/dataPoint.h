@@ -19,7 +19,7 @@ protected:
 
     
 public:
-    ~dataPoint();                                           //Destructor
+    //~dataPoint();                                           //Destructor
     inline dataPoint();                                     //Constructor
     inline dataPoint(const double &x, const double &y);
     

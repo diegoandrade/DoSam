@@ -22,11 +22,6 @@ downSamplingTimeSeries::downSamplingTimeSeries()
     alfa = beta = gama = 0;
 }
 
-downSamplingTimeSeries::~downSamplingTimeSeries()
-{
-    
-}
-
 void downSamplingTimeSeries::downSampling( int totalNumberOfElements, int numberToDownSample, dataPoint * baseData)
 {
     operablePoints = (dataPoint *) malloc(totalNumberOfElements*sizeof(dataPoint));
@@ -37,7 +32,7 @@ void downSamplingTimeSeries::downSampling( int totalNumberOfElements, int number
     {
         operablePoints[i] = baseData[i];
         
-        D(printf("operablePoints[%i]: %f\n", i, baseData[i].y););
+        D(printf("operablePoints[%i]: %f\n", i, operablePoints[i].y););
     }
     
     nopb = numberOfElementsPerBin(totalNumberOfElements,numberToDownSample,nopb);
@@ -46,12 +41,25 @@ void downSamplingTimeSeries::downSampling( int totalNumberOfElements, int number
     
     #pragma mark  ---- CURRENT----  
     
-    double area =0;
+    double area = 0;
     double area2 = 0;
     
-   // area2 = findAreaGivenThreePoints(area, operablePoints[1], operablePoints[2], operablePoints[3]);
+    findAreaGivenThreePoints(area, baseData[3], baseData[5], baseData[6]);
+    findArea(area2, 15.0, 15, 23, 30, 50, 25);
     
+    printf("basepoint A: %f \n", operablePoints[3].y);
+    printf("basepoint B: %f \n", operablePoints[5].y);
+    printf("basepoint C: %f \n", operablePoints[6].y);
     
+    printf("The area of the triangle is: %f \n", area);
+    printf("The area2 of the triangle is: %f \n", area2);
+    
+    for (int i=1; i<totalNumberOfElements-2; i++)
+    {
+        findAreaGivenThreePoints(area, baseData[i], baseData[i+1], baseData[i+2]);
+        printf("The area of the triangle[%d] is: %f \n", i, area);
+
+    }
     
     /*for (int i=0; i< numberToDownSample; i++)
     {
@@ -65,7 +73,7 @@ void downSamplingTimeSeries::downSampling( int totalNumberOfElements, int number
     
 }
 
-double downSamplingTimeSeries::findAreaGivenThreePoints(double & area, dataPoint A, dataPoint B, dataPoint C)
+void downSamplingTimeSeries::findAreaGivenThreePoints(double & area, dataPoint & A, dataPoint & B, dataPoint & C)
 {
     
     alfa = A.x*(B.y-C.y);
@@ -74,7 +82,16 @@ double downSamplingTimeSeries::findAreaGivenThreePoints(double & area, dataPoint
     
     area = abs((alfa+beta+gama)/2);
     
-    return area;
+}
+
+void downSamplingTimeSeries:: findArea ( double & area, double  Ax, double Ay, double Bx, double By, double Cx, double Cy)
+{
+    alfa = Ax*(By-Cy);
+    beta = Bx*(Cy-Ay);
+    gama = Cx*(Ay-By);
+    
+    area = abs((alfa+beta+gama)/2);
+
 }
 
 int downSamplingTimeSeries::numberOfElementsPerBin(int totalNumberOfElements, int numberToDownSample, int & numberOfElementsPerBinT)
