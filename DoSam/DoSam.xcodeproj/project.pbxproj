@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B50AF7F11B29FB4300E5931E /* DoSa.m in Sources */ = {isa = PBXBuildFile; fileRef = B50AF7F01B29FB4300E5931E /* DoSa.m */; };
 		B54D19831B25C99000F731BE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B54D19821B25C99000F731BE /* main.cpp */; };
 		B54D198B1B25DCBE00F731BE /* dataExtraction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B54D19891B25DCBE00F731BE /* dataExtraction.cpp */; };
 		B54D198E1B25DDFE00F731BE /* dataPoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B54D198C1B25DDFE00F731BE /* dataPoint.cpp */; };
@@ -26,6 +27,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B50AF7EC1B29FB4300E5931E /* DoSa.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoSa.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B50AF7EF1B29FB4300E5931E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B50AF7F01B29FB4300E5931E /* DoSa.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DoSa.m; sourceTree = "<group>"; };
 		B54D197F1B25C99000F731BE /* DoSam */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DoSam; sourceTree = BUILT_PRODUCTS_DIR; };
 		B54D19821B25C99000F731BE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		B54D19891B25DCBE00F731BE /* dataExtraction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dataExtraction.cpp; sourceTree = "<group>"; };
@@ -38,6 +42,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B50AF7E91B29FB4300E5931E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B54D197C1B25C99000F731BE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -48,10 +59,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B50AF7ED1B29FB4300E5931E /* DoSa */ = {
+			isa = PBXGroup;
+			children = (
+				B50AF7F01B29FB4300E5931E /* DoSa.m */,
+				B50AF7EE1B29FB4300E5931E /* Supporting Files */,
+			);
+			path = DoSa;
+			sourceTree = "<group>";
+		};
+		B50AF7EE1B29FB4300E5931E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B50AF7EF1B29FB4300E5931E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		B54D19761B25C99000F731BE = {
 			isa = PBXGroup;
 			children = (
 				B54D19811B25C99000F731BE /* DoSam */,
+				B50AF7ED1B29FB4300E5931E /* DoSa */,
 				B54D19801B25C99000F731BE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -60,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				B54D197F1B25C99000F731BE /* DoSam */,
+				B50AF7EC1B29FB4300E5931E /* DoSa.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -82,6 +112,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		B50AF7EB1B29FB4300E5931E /* DoSa */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B50AF7F41B29FB4300E5931E /* Build configuration list for PBXNativeTarget "DoSa" */;
+			buildPhases = (
+				B50AF7E81B29FB4300E5931E /* Sources */,
+				B50AF7E91B29FB4300E5931E /* Frameworks */,
+				B50AF7EA1B29FB4300E5931E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DoSa;
+			productName = DoSa;
+			productReference = B50AF7EC1B29FB4300E5931E /* DoSa.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		B54D197E1B25C99000F731BE /* DoSam */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B54D19861B25C99000F731BE /* Build configuration list for PBXNativeTarget "DoSam" */;
@@ -108,6 +155,9 @@
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = Intelestial;
 				TargetAttributes = {
+					B50AF7EB1B29FB4300E5931E = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
 					B54D197E1B25C99000F731BE = {
 						CreatedOnToolsVersion = 6.3.2;
 					};
@@ -126,11 +176,30 @@
 			projectRoot = "";
 			targets = (
 				B54D197E1B25C99000F731BE /* DoSam */,
+				B50AF7EB1B29FB4300E5931E /* DoSa */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		B50AF7EA1B29FB4300E5931E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		B50AF7E81B29FB4300E5931E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B50AF7F11B29FB4300E5931E /* DoSa.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B54D197B1B25C99000F731BE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -145,6 +214,38 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		B50AF7F21B29FB4300E5931E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DoSa/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B50AF7F31B29FB4300E5931E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DoSa/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		B54D19841B25C99000F731BE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -239,6 +340,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B50AF7F41B29FB4300E5931E /* Build configuration list for PBXNativeTarget "DoSa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B50AF7F21B29FB4300E5931E /* Debug */,
+				B50AF7F31B29FB4300E5931E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		B54D197A1B25C99000F731BE /* Build configuration list for PBXProject "DoSam" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -255,6 +364,7 @@
 				B54D19881B25C99000F731BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

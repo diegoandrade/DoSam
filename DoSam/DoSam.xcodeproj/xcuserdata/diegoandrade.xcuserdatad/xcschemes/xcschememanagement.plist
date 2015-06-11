@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>DoSa.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>DoSam.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +17,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>B50AF7EB1B29FB4300E5931E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>B54D197E1B25C99000F731BE</key>
 		<dict>
 			<key>primary</key>

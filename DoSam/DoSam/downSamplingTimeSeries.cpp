@@ -47,19 +47,18 @@ void downSamplingTimeSeries::downSampling( int totalNumberOfElements, int number
     #pragma mark  ---- CURRENT----  
     
     double area = 0;
-    double area2 = 0;
     
-    findAreaGivenThreePoints(area, baseData[3], baseData[5], baseData[6]);
-    findArea(area2, 15.0, 15, 23, 30, 50, 25);
+    //double area2 = 0;
     
-    ////printf("basepoint A: %f \n", operablePoints[3].y);
+    //findAreaGivenThreePoints(area, baseData[3], baseData[5], baseData[6]);
+    //findArea(area2, 15.0, 15, 23, 30, 50, 25);
+    
+    //printf("basepoint A: %f \n", operablePoints[3].y);
     //printf("basepoint B: %f \n", operablePoints[5].y);
     //printf("basepoint C: %f \n", operablePoints[6].y);
     
     //printf("The area of the triangle is: %f \n", area);
     //printf("The area2 of the triangle is: %f \n", area2);
-    
-    
     
     areaPerPoint[0] = 0;
     
@@ -88,17 +87,33 @@ void downSamplingTimeSeries::downSampling( int totalNumberOfElements, int number
                 downSampleResult[i].x = baseData[k+1].x;
                 downSampleResult[i].y = baseData[k+1].y;
             }
+            else
+            {
+                downSampleResult[i].x = baseData[k].x;
+                downSampleResult[i].y = baseData[k].y;
+            }
         }
     }
     
-    printf("\n");
+    downSampleResult[0].x = baseData[0].x;
+    downSampleResult[0].y = baseData[0].y;
+    downSampleResult[ntds-1].x = baseData[totalNumberOfElements-1].x;
+    downSampleResult[ntds-1].y = baseData[totalNumberOfElements-1].y;
+    
+    /*printf("\n");
     for (int i = 0 ; i< ntds; i++)
     {
           printf("time[%d]: %ld \t value[%d]: %f\n",i,downSampleResult[i].x,i,downSampleResult[i].y);
     }
+     */
     
     const char* file = "output.txt";
-    printToFile(file , downSampleResult, baseData, ntds);
+    printToFile(file , downSampleResult, ntds);
+    
+    
+    free(operablePoints);
+    free(downSampleResult);
+    free(areaPerPoint);
     
 }
 
@@ -142,25 +157,19 @@ int downSamplingTimeSeries::numberOfElementsPerBin(int totalNumberOfElements, in
     return numberOfElementsPerBinT;
 }
 
-void downSamplingTimeSeries::printToFile(const char* file, dataPoint * downSampleResult, dataPoint * baseData, int ntds)
+void downSamplingTimeSeries::printToFile(const char* file, dataPoint * downSampleResult, int ntds)
 {
     ofstream myfile;
     myfile.open (file);
     
-    //myfile << "time[" << 0 << "]: " << baseData[0].x << "\t value[" << 0 << "]:" << baseData[0].y << endl ;
-    myfile << baseData[0].x << "\t" << baseData[0].y << endl ;
-    
-    for (int i = 1 ; i< ntds-1; i++)
+    for (int i = 0 ; i< ntds; i++)
     {
-               //myfile << "time[" << i << "]: " << downSampleResult[i].x << "\t value[" << i << "]:" << downSampleResult[i].y << endl ;
                myfile <<  downSampleResult[i].x << "\t" << downSampleResult[i].y << endl ;
 
     }
     
-    //myfile << "time[" << ntds-1 << "]: " << baseData[ntds-1].x << "\t value[" << ntds << "]:" << baseData[ntds-1].y << endl ;
-    myfile << baseData[ntds-1].x << "\t" << baseData[ntds-1].y << endl ;
+    //myfile << "by Diego Andrade.\nAll Rights Reserved 2015\n";
     
-    myfile << "by Diego Andrade.\nAll Rights Reserved 2015\n";
     myfile.close();
 }
 

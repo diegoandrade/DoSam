@@ -48,23 +48,13 @@ int main( int argc, char* argv[] )
                 numberOfElements = objReadDat.numberOfElements;
                 
                 //printf("Number of Elements on this file: %d \n\n ", numberOfElements);
+                printf("DoSam downsample %d elements to %d \n", numberOfElements, nptd);
+                printf("output.txt contains the list of downsampled values");
                 
                 objOperateOnData.downSampling(numberOfElements, nptd, pointsExtracted);
                 
+                free(pointsExtracted);
                 
-    
-
-                
-                /*D(
-                if(argc < 4)
-                {
-                    printf("Needs more arguemnts\n");
-                }
-                printf("Let's see that is in argv[]\n");
-                for (int i=0; i< argc; i++)
-                {
-                    printf("argv[%d] = %s\n", i, argv[i]);
-                });*/
                 break;
         }
     }

@@ -9,14 +9,14 @@
          <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B54D197E1B25C99000F731BE"
-               BuildableName = "DoSam"
-               BlueprintName = "DoSam"
+               BlueprintIdentifier = "B50AF7EB1B29FB4300E5931E"
+               BuildableName = "DoSa.xctest"
+               BlueprintName = "DoSa"
                ReferencedContainer = "container:DoSam.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,13 +28,23 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B50AF7EB1B29FB4300E5931E"
+               BuildableName = "DoSa.xctest"
+               BlueprintName = "DoSa"
+               ReferencedContainer = "container:DoSam.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B54D197E1B25C99000F731BE"
-            BuildableName = "DoSam"
-            BlueprintName = "DoSam"
+            BlueprintIdentifier = "B50AF7EB1B29FB4300E5931E"
+            BuildableName = "DoSa.xctest"
+            BlueprintName = "DoSa"
             ReferencedContainer = "container:DoSam.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -48,30 +58,15 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B54D197E1B25C99000F731BE"
-            BuildableName = "DoSam"
-            BlueprintName = "DoSam"
+            BlueprintIdentifier = "B50AF7EB1B29FB4300E5931E"
+            BuildableName = "DoSa.xctest"
+            BlueprintName = "DoSa"
             ReferencedContainer = "container:DoSam.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
-      <CommandLineArguments>
-         <CommandLineArgument
-            argument = "-r"
-            isEnabled = "YES">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "1000"
-            isEnabled = "YES">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "datapoints.txt"
-            isEnabled = "YES">
-         </CommandLineArgument>
-      </CommandLineArguments>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -81,16 +76,15 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B54D197E1B25C99000F731BE"
-            BuildableName = "DoSam"
-            BlueprintName = "DoSam"
+            BlueprintIdentifier = "B50AF7EB1B29FB4300E5931E"
+            BuildableName = "DoSa.xctest"
+            BlueprintName = "DoSa"
             ReferencedContainer = "container:DoSam.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

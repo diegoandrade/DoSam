@@ -35,7 +35,7 @@ public:
     double alfa, beta, gama;
     
 private:
-    void printToFile (const char* file, dataPoint * downSampleResult, dataPoint * baseData, int ntds);
+    void printToFile (const char* file, dataPoint * downSampleResult, int ntds);
     
 };
 
