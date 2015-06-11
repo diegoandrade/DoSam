@@ -26,6 +26,7 @@ int main( int argc, char* argv[] )
 {
     const char* nvalue = "World" ;
     int tvalue = 1 ;
+    int nptd = 0;
     
     //printf("argc = %d\n", argc);
     
@@ -42,13 +43,13 @@ int main( int argc, char* argv[] )
                 if(optarg) tvalue = std::atoi(optarg) ;
                 break;
             case 'r':
-                dataPoint* pointsExtracted = objReadDat.extracDataFromFile(argv[2]);
+                nptd = atoi(argv[2]);
+                dataPoint* pointsExtracted = objReadDat.extracDataFromFile(argv[3]);
                 numberOfElements = objReadDat.numberOfElements;
                 
-                printf("Number of Elements on this file: %d \n\n ", numberOfElements);
+                //printf("Number of Elements on this file: %d \n\n ", numberOfElements);
                 
-               objOperateOnData.downSampling(numberOfElements, 10, pointsExtracted);
-                
+                objOperateOnData.downSampling(numberOfElements, nptd, pointsExtracted);
                 
                 
     

@@ -12,8 +12,8 @@
 #include "Common.h"
 #include "dataExtraction.h"
 
-//#undef DEBUG
-#define DEBUG
+#undef DEBUG
+//#define DEBUG
 #ifdef DEBUG
 #  define D(x) x
 #else

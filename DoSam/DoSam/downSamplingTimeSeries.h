@@ -26,12 +26,16 @@ public:
     void findAreaGivenThreePoints (double & area , dataPoint & A, dataPoint & B, dataPoint & C);
     void findArea ( double & area, double Ax, double Ay, double Bx, double By, double Cx, double Cy);
     int numberOfElementsPerBin(int totalNumberOfElements, int numberToDownSample, int & numberOfElementsPerBinT);
+   
     
     dataPoint * operablePoints;
+    dataPoint * downSampleResult;
     double * areaPerPoint;
     
     double alfa, beta, gama;
     
+private:
+    void printToFile (const char* file, dataPoint * downSampleResult, dataPoint * baseData, int ntds);
     
 };
 

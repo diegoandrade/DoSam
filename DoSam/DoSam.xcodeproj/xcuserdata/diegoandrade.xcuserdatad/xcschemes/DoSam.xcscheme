@@ -64,6 +64,10 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
+            argument = "10"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
             argument = "datapoints.txt"
             isEnabled = "YES">
          </CommandLineArgument>
