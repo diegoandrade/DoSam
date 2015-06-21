@@ -31,18 +31,37 @@ int main( int argc, char* argv[] )
     //printf("argc = %d\n", argc);
     
     int c ;
-    while( ( c = getopt (argc, argv, "ntr:") ) != -1 )
+    while( ( c = getopt (argc, argv, "dntr:") ) != -1 )
     {
         switch(c)
         {
+           
+            case 'd':
+            {
+                nptd = atoi(argv[2]);
+                dataPoint* pointsExtracted = objReadDat.extracDataFromFile(argv[3]);
+                numberOfElements = objReadDat.numberOfElements;
+                
+                //printf("Number of Elements on this file: %d \n\n ", numberOfElements);
+                printf("DoSam downsample %d elements to %d \n", numberOfElements, nptd);
+                printf("output.txt contains the list of downsampled values");
+                
+                objOperateOnData.randDownSampling(numberOfElements, nptd, pointsExtracted);
+                
+                free(pointsExtracted);
+                
+                break;
+
+            }
             case 'n':
+            {
                 if(optarg) nvalue = optarg;
                 else std::cerr << "got a nullptr for optarg for -n\n" ;
                 break;
-            case 't':
-                if(optarg) tvalue = std::atoi(optarg) ;
-                break;
+                
+            }
             case 'r':
+            {
                 nptd = atoi(argv[2]);
                 dataPoint* pointsExtracted = objReadDat.extracDataFromFile(argv[3]);
                 numberOfElements = objReadDat.numberOfElements;
@@ -56,6 +75,14 @@ int main( int argc, char* argv[] )
                 free(pointsExtracted);
                 
                 break;
+            }
+            case 't':
+            {
+                if(optarg) tvalue = std::atoi(optarg) ;
+                break;
+            }
+       
+          
         }
     }
     

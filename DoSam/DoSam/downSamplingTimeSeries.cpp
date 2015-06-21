@@ -44,8 +44,6 @@ void downSamplingTimeSeries::downSampling( int totalNumberOfElements, int number
     
     D(printf("number of elements per bin: %d\n", nopb));
     
-    #pragma mark  ---- CURRENT----  
-    
     double area = 0;
     
     //double area2 = 0;
@@ -110,6 +108,54 @@ void downSamplingTimeSeries::downSampling( int totalNumberOfElements, int number
     const char* file = "output.txt";
     printToFile(file , downSampleResult, ntds);
     
+    
+    free(operablePoints);
+    free(downSampleResult);
+    free(areaPerPoint);
+    
+}
+
+void downSamplingTimeSeries::randDownSampling(int totalNumberOfElements, int numberToDownSample, dataPoint *baseData)
+{
+    operablePoints = (dataPoint *) malloc(totalNumberOfElements*sizeof(dataPoint));
+    downSampleResult = (dataPoint *) malloc(numberToDownSample*sizeof(dataPoint));
+    areaPerPoint = (double *) malloc(totalNumberOfElements*sizeof(double));
+    
+    for (int i=0; i< totalNumberOfElements; i++)
+    {
+        operablePoints[i] = baseData[i];
+        
+        D(printf("operablePoints[%i]: %f\n", i, operablePoints[i].y););
+    }
+    
+    nopb = numberOfElementsPerBin(totalNumberOfElements,numberToDownSample,nopb);
+    ntds = numberToDownSample;
+    
+    D(printf("number of elements per bin: %d\n", nopb));
+    
+#pragma mark  ---- CURRENT----
+    
+    srand (time(NULL)); //initializes random function ... make sure this does not go onto production review WARNING!
+    
+    for (int i=0 ; i < ntds; i++)
+    {
+            //k=j+i*nopb;
+        
+            int k=(rand() % ntds )+i*nopb; //creates a random function between 0 and the ntds
+            D(printf("The number k: %d\n", k);)
+
+        
+            downSampleResult[i].x = baseData[k+1].x;
+            downSampleResult[i].y = baseData[k+1].y;
+    }
+    
+    downSampleResult[0].x = baseData[0].x;
+    downSampleResult[0].y = baseData[0].y;
+    downSampleResult[ntds-1].x = baseData[totalNumberOfElements-1].x;
+    downSampleResult[ntds-1].y = baseData[totalNumberOfElements-1].y;
+    
+    const char* file = "output.txt";
+    printToFile(file , downSampleResult, ntds);
     
     free(operablePoints);
     free(downSampleResult);

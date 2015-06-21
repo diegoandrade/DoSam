@@ -60,7 +60,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "-r"
+            argument = "-d"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument

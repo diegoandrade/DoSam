@@ -17,13 +17,16 @@
 #include <iterator>
 #include <limits>
 #include <sstream>
-#include <stdio.h>
 #include <string>
 #include <time.h>
 #include <unistd.h>
 #include <vector>
 #include <cmath>
 #include <assert.h>
+
+#include <stdio.h>      /* printf, scanf, puts, NULL */
+#include <stdlib.h>     /* srand, rand */
+#include <time.h>       /* time */
 
 
 

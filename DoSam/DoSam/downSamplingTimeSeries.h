@@ -18,6 +18,7 @@ public:
     //~downSamplingTimeSeries();      //Destructor
     downSamplingTimeSeries();		//Constructor
     void downSampling( int totalNumberOfElements, int numberToDownSample, dataPoint * baseData);
+    void randDownSampling ( int totalNumberOfElements, int numberToDownSample, dataPoint * baseData);
     
     int tnoe ; // total number Of Elements;
     int nopb ; // number Of Elements Per Bin;
